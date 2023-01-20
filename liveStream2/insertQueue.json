@@ -1,0 +1,21 @@
+// ================================================================
+// TESTING ingestQueue Trigger
+// ================================================================
+
+// insert this document into the ingestQueue collection
+
+
+{
+  "time": {
+    "$date": {
+      "$numberLong": "1602596010219"
+    }
+  },
+  "meta": {
+    "device": "testInQueue"
+  },
+  "truth_quat_CON2ECEF4": 0.7049953208872,
+  "truth_vel_CON_ECEF_ECEF_MpS1": -1,
+  "truth_pos_CON_ECEF_ECEF_M1": -1387897.36558835,
+  "truth_vel_CON_ECEF_ECEF_MpS3": 0.00414972080992211
+}

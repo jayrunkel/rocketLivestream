@@ -1,3 +1,26 @@
+// Test strings in query tester
+// 1. MpS4
+// 2. min MpS4
+
+
+// Search Index
+
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "notes": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      }
+    }
+  }
+}
+
+
+/*
 {
   "mappings": {
     "dynamic": false,
@@ -36,3 +59,4 @@
     }
   }
 }
+*/
