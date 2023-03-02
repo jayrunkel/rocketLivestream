@@ -27,11 +27,11 @@ and MongoDB Atlas account before the start of the webinar.
    [Atlas Login](https://account.mongodb.com/account/login) and click
    on the blue "Sign Up" link.
 3. Deploy a free tier cluster (M0)
-  * Click the green "Build a Database" button.
-  * Select the M0 FREE box on the right.
-  * Pick the cloud provider and region of your choice
-  * Give you cluster the name "Aerospace"
-  * Click the create button. This will take you to the "Security
+   * Click the green "Build a Database" button.
+   * Select the M0 FREE box on the right.
+   * Pick the cloud provider and region of your choice
+   * Give you cluster the name "Aerospace"
+   * Click the create button. This will take you to the "Security
 Quickstart" page. _(If you are asked for payment information, verify that you have
 selected a M0 FREE cluster. No payment information should be necessary.)_
 
