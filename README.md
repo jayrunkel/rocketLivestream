@@ -1,9 +1,5 @@
 # MongoDB Rocket Data Live Stream
 
-<style type="text/css">
-  ol ul { margin-left: 10px; }
-</style>
-
 # Overview
 
 This repository contains four top level folders as follows:
@@ -38,35 +34,34 @@ selected a M0 FREE cluster. No payment information should be necessary.)_
 
 
 4. Security Quickstart
-  * Create a database username and password. This is a different user than they
+   * Create a database username and password. This is a different user than they
 one created in step 2. The first user is the user for the Atlas
 control plan. This new user is for the user that will access the data
 in MongoDB.
-  * Select the "Username and Password" button
-  * Provide a username, e.g., "admin" or "mongoUser"
-  * Provide a password or have Atlas generate a password. Save the
+   * Select the "Username and Password" button
+   * Provide a username, e.g., "admin" or "mongoUser"
+   * Provide a password or have Atlas generate a password. Save the
 password in a safe place.
-  * Select "My Local Environment" under "2. Where would you like to
+   * Select "My Local Environment" under "2. Where would you like to
 connect from?"
-  * Either provide an IP address or click "Add My Current IP Address"
+   * Either provide an IP address or click "Add My Current IP Address"
 to insert your IP address. (Note, if you IP address changes or if you
 move to a new location, you will need to update your IP Whitelist
 under Security-->Network Access, in the Atlas UI.
 
 5. Connection String
-  * In the Atlas UI, select the "Connect" button next to your new
+   * In the Atlas UI, select the "Connect" button next to your new
 database name.
-  * Select Connect using MongoDB Compass
-  * Select "I have MongoDB Compass"
-  * Copy the connection string and save it somewhere. It should look
+   * Select Connect using MongoDB Compass
+   * Select "I have MongoDB Compass"
+   * Copy the connection string and save it somewhere. It should look
 something like:
 `mongodb+srv://demo:<password>@aerospace.a6ndg4g.mongodb.net/test`
 
 6. Connect Using Compass
-
-  * start MongoDB Compass
-  * past the connection string (above) into the "URI" box.
-  * In the connection string, in between the // and the @, add your
+   * start MongoDB Compass
+   * past the connection string (above) into the "URI" box.
+   * In the connection string, in between the // and the @, add your
 username and password, with the user name and password separated with
 a colon. The final connection string should look
 something like:
