@@ -1,5 +1,9 @@
 # MongoDB Rocket Data Live Stream
 
+<style type="text/css">
+  ol ul { margin-left: 10px; }
+</style>
+
 # Overview
 
 This repository contains four top level folders as follows:
