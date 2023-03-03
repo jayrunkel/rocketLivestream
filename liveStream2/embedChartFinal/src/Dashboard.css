@@ -1,0 +1,24 @@
+.title {
+  text-align: center;
+}
+
+.form {
+  border: solid black 1px;
+}
+
+.elem {
+  overflow: hidden;
+  display: inline-block;
+  width: 150px;
+  height: 20px;
+}
+
+.charts {
+  text-align: center;
+}
+
+.chart {
+  border: solid #589636 1px;
+  margin: 5px;
+  display: inline-block;
+}
