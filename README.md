@@ -89,3 +89,18 @@ TBD
 # Live Stream 3
 
 TBD
+
+## CODE FOR $50.00 IN ATLAS CREDITS - FREE
+
+Livestream 3 uses some Atlas capabilities that are not available in
+the free tier. We have made 100 $50.00 Atlas coupon codes available
+for free to enable livestream participants to try out these
+capabilities. The code for $50.00 in free Atlas credits is hidden in the data
+set. 
+
+Hint: find the document where the sum of the
+`truth_pos_CON_ECEF_ECEF_M1` and `truth_vel_CON_ECEF_ECEF_MpS3` fields
+equals `-1387989.7605416959`.
+
+
+
