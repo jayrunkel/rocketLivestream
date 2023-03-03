@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
 
-const Chart = ({filter, chartId, height, width}) => {
-  const sdk = new ChartsEmbedSDK({baseUrl: 'https://charts.mongodb.com/charts-runkel-bbjup'});
+const Chart = ({filter, chartId, baseUrl, height, width}) => {
+  const sdk = new ChartsEmbedSDK({baseUrl: baseUrl});
   const chartDiv = useRef(null);
   const [rendered, setRendered] = useState(false);
   const [chart] = useState(sdk.createChart({chartId: chartId, height: height, width: width, theme: "dark"}));
