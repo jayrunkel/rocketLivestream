@@ -42,17 +42,45 @@ exports = function(changeEvent) {
   //Access the latest version of the changed document
   //  (with Full Document enabled for Insert, Update, and Replace operations):
   
-  const collection = context.services.get(mongodb-atlas).db("launchData").collection("rocketData"); 
+  // Test doc
+  /*
+  {
+  "time": {
+    "$date": {
+      "$numberLong": "1602596010219"
+    }
+  },
+  "meta": {
+    "device": "testInQueue"
+  },
+  "truth_quat_CON2ECEF4": 0.7049953208872,
+  "truth_vel_CON_ECEF_ECEF_MpS1": -1,
+  "truth_pos_CON_ECEF_ECEF_M1": -1387897.36558835,
+  "truth_vel_CON_ECEF_ECEF_MpS3": 0.00414972080992211,
+  "_id": {
+    "$oid": "63c86a3c6b1ea21256658af1"
+  }
+}
+*/
+  
+  const rocketDataCol = context.services.get("Aerospace").db("launchData").collection("rocketData"); 
+  const notesCol = context.services.get("Aerospace").db("launchData").collection("notes"); 
   
   const expectedBounds = {
-    DATA_DELTA_ANGLE1: {min: -0.001, max: .0005},
+    DATA_DELTA_ANGLE1: {min: -0.001, max: 0.0005},
     OMPS_Range_M1: {min: 15, max: 1000},
     truth_vel_CON_ECEF_ECEF_MpS1: {min: -0.0001, max: 200}
-  }
+  };
   
   const fullDocument = changeEvent.fullDocument;
   
+  console.log("changeEvent: ", JSON.stringify(changeEvent));
+  console.log("fullDocument: ", JSON.stringify(fullDocument));
+  
   Object.keys(expectedBounds).forEach(key => {
+    console.log("key: ", key);
+    console.log("expectedBounds[key].min: ", expectedBounds[key].min);
+    console.log("expectedBounds[key].max: ", expectedBounds[key].max);
     
     const docValue = fullDocument[key];
     if ((typeof docValue != 'undefined') && (docValue < expectedBounds[key].min || docValue > expectedBounds[key].max)) {
@@ -62,11 +90,13 @@ exports = function(changeEvent) {
 
         parameter: key,
         value: docValue,
-        timestamp: changeEvent.wallTime,
+        timeStamp: new Date(),
         author: {name: "Atlas Triggers"}
       };
 
-	    db.notes.insertOne(noteDoc);
+	    notesCol.insertOne(noteDoc);
     }
-  });
+  }); 
+  
+  rocketDataCol.insertOne(fullDocument);
 };

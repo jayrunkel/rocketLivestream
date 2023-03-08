@@ -1,0 +1,68 @@
+{
+  "databases": [
+    {
+      "collections": [
+        {
+          "name": "lastLaunch",
+          "dataSources": [
+            {
+              "collection": "rocketData",
+              "database": "launchData",
+              "storeName": "Demo"
+            }
+          ]
+        },
+        {
+          "name": "Weather",
+          "dataSources": [
+            {
+              "path": "/",
+              "storeName": "rocket-data-archive"
+            }
+          ]
+        },
+        {
+          "name": "historicalData",
+          "dataSources": [
+            {
+              "datasetPrefix": "v1$atlas$snapshot$Demo$launchData$ingestQueue",
+              "storeName": "aws-dls-store"
+            }
+          ]
+        },
+        {
+          "name": "historicalDataTS",
+          "dataSources": [
+            {
+              "datasetPrefix": "v1$atlas$snapshot$Demo$launchData$rocketData",
+              "storeName": "aws-dls-store"
+            }
+          ]
+        }
+      ],
+      "name": "rocketAnalytics",
+      "views": []
+    }
+  ],
+  "stores": [
+    {
+      "clusterName": "Demo",
+      "name": "Demo",
+      "projectId": "5cacdd8d553855ee7859f398",
+      "provider": "atlas"
+    },
+    {
+      "bucket": "rocket-data-archive",
+      "delimiter": "/",
+      "name": "rocket-data-archive",
+      "prefix": "SolarWind/",
+      "provider": "s3",
+      "region": "us-east-1"
+    },
+    {
+      "name": "aws-dls-store",
+      "provider": "dls:aws",
+      "region": "us-east-1"
+    }
+  ]
+}
