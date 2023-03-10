@@ -9,12 +9,16 @@ This repository contains four top level folders as follows:
 - liveStream2 - queries and other resources used during live stream 2
 - liveStream3 - queries and other resources used during live stream 3
 
-## Live Stream Preparation
+## Livestream Preparation
 
 This live stream has been designed so that attendees can build the
 solution simultaneously with the instructor. To make this possible,
-attendees should perform the following steps to ready their computer
-and MongoDB Atlas account before the start of the webinar.
+attendees should perform the steps listed below to ready their computer
+and MongoDB Atlas account before the start of the webinar. If you
+prefer video instructions, you can review them
+[here](https://www.youtube.com/watch?v=vOjgLyrGMzY).
+
+**Livestream Setup Instructions**
 
 1. Download and install MongoDB Compass
    [download](https://www.mongodb.com/try/download/compass) Download and install
