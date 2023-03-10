@@ -1,8 +1,8 @@
 import './Dashboard.css';
 import Chart from "./Chart";
 
-var BASE_URL = 'https://charts.mongodb.com/charts-runkel-bbjup';
-var CHART_ID = '63c1a932-6f2c-4252-8bf3-7eed9eeb2322';
+var BASE_URL = 'https://charts.mongodb.com/charts-runkeltest-ppdvu';
+var CHART_ID = '640b85dc-a859-470f-8aed-0f684146aeca';
 
 const Dashboard = () => {
 

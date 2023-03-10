@@ -62,8 +62,8 @@ exports = function(changeEvent) {
   }
 }
 */
-  
-  const rocketDataCol = context.services.get("Aerospace").db("launchData").collection("rocketData"); 
+
+//  const rocketDataCol = context.services.get("Aerospace").db("launchData").collection("rocketData"); 
   const notesCol = context.services.get("Aerospace").db("launchData").collection("notes"); 
   
   const expectedBounds = {
@@ -85,18 +85,22 @@ exports = function(changeEvent) {
     const docValue = fullDocument[key];
     if ((typeof docValue != 'undefined') && (docValue < expectedBounds[key].min || docValue > expectedBounds[key].max)) {
       const noteDoc = {
-		    title: 'OUT OF BOUNDS NOTIFICATION',
+		    title: 'OUT OF BOUNDS NOTIFICATION [ ' + key + ' ]',
 		    notes: `Parameter ${key} with ${docValue} was out of bounds [${expectedBounds[key].min}, ${expectedBounds[key].max}].`,
 
+				type: "outOfBoundsNotification",
+				device: fullDocument.meta.device,
         parameter: key,
         value: docValue,
         timeStamp: new Date(),
         author: {name: "Atlas Triggers"}
       };
-
-	    notesCol.insertOne(noteDoc);
+      
+      notesCol.insertOne(noteDoc);
+      console.log("New note: ", JSON.stringify(noteDoc));
+	    
     }
   }); 
   
-  rocketDataCol.insertOne(fullDocument);
+	//  rocketDataCol.insertOne(fullDocument);
 };

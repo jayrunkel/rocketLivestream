@@ -2,7 +2,8 @@
 // TESTING ingestQueue Trigger
 // ================================================================
 
-// insert this document into the ingestQueue collection
+// insert this document into the rocketData collection to test the trigger for generating nodes when
+// parameter values exceed some threshold.
 
 
 {
@@ -12,7 +13,7 @@
     }
   },
   "meta": {
-    "device": "testInQueue"
+    "device": "testTrigger"
   },
   "truth_quat_CON2ECEF4": 0.7049953208872,
   "truth_vel_CON_ECEF_ECEF_MpS1": -1,

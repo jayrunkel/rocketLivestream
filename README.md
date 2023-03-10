@@ -1,4 +1,4 @@
-# MongoDB Rocket Data Live Stream
+# MongoDB Rocket Data Livestream
 
 # Overview
 
@@ -72,9 +72,9 @@ something like:
 
 ```mongodb+srv://yourUserName:yourPassword@aerospace.a6ndg4g.mongodb.net/test```
 
-# Live Stream 1
+# Livestream 1
 
-There are three resources for Live Stream 1
+There are three resources for Livestream 1:
 
 1. simpleQueries.js - Queries used to review the rocket data
 2. aggregations.js - Aggregation queries used to perform some basic
@@ -85,14 +85,50 @@ There are three resources for Live Stream 1
    gained from the live stream, You should try to build the
    chart manually by following the steps during the live stream.)_
    
-# Live Stream 2
+# Livestream 2
 
-TBD
+There are 5 resources for Livestream 2:
+
+1. notesSearchIndex.js - the JSON definition of the search index
+   created on the launchData.notes collection. During the livestream,
+   we will use the Visual search index builder. This document is here
+   for reference.
+2. simpleSearchQuery.js - a simple aggregation pipeline that executes
+   a search query and leverages the index defined in
+   notesSearchIndex.js.
+4. embedChartFinal - A simple React application that leverages the
+   Charts SDK to embed a chart in a React component. To embed your
+   chart into this application execute the following steps:
+   * Install node js, if not installed already
+   * `cd <yourPath>/rocketLiveStream/liveStream2/embedChartFinal`
+   * `npm install`
+   * `npm start` (this should open a browser tab with the react app)
+   * In Charts, make your data source, dashboard, and chart accessible
+     by unauthenticated access.
+   * Assign your baseUri and ChartId in the variables at the top of `<yourPath>/rocketLiveStream/liveStream2/embedChartFinal/src/Dashboard.js`
+5. parameterTrigger.js - The code for the trigger that will inspect
+   the parameter values and insert a node if a parameter is out of
+   bounds. 
 
 
-# Live Stream 3
+# Livestream 3
 
-TBD
+There are four resources for Livestream 3:
+
+1. dataFedConfig.json - The JSON representation of the Data Federation
+   configuration that consists of a virtual database connecting the M0
+   Atlas cluster, Atlas Data Lake Backup Snaphots, and weather data
+   located in a S3 bucket.
+2. lidarJoinPlasma.js - An aggregation query that uses Data Federation
+   tojoins the rocket data stored in the Data Lake with the weather
+   data in a S3 bucket.
+3. setSchemas.js - Atlas SQL commands to generate SQL schemas for the
+   Data Lake and S3 bucket.
+4. atlasSQL.sql - SQL queries for Atlas SQL that joins the rocket data
+   stored in Data Lake with the weather data in S3 bucket. The queries
+   in this file perform the same operations as the queries in
+   lidarJoinPlasma.js. lidarJoinPlasma.js is in MQL whereas
+   atlasSQL.js is in SQL.
 
 ## CODE FOR $50.00 IN ATLAS CREDITS - FREE
 

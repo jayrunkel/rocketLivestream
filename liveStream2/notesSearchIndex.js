@@ -20,7 +20,9 @@
 }
 
 
-/*
+// This is a more complex index definition with autocomplete and facets.
+// This version is not required for the livestream.
+/* 
 {
   "mappings": {
     "dynamic": false,

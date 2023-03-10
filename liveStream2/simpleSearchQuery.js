@@ -23,7 +23,7 @@ const searchQuery =
 [
   {
     $search: {
-      index: "default1",
+      index: "default",
       text: {
         query: ["min", "mp4s"],
         path: ["notes", "title"],
