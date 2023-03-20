@@ -1,6 +1,7 @@
 import './Dashboard.css';
 import Chart from "./Chart";
 
+// REPLACE THESE VALUES WITH THE baseUrl and chartId of your chart
 var BASE_URL = 'https://charts.mongodb.com/charts-runkeltest-ppdvu';
 var CHART_ID = '640b85dc-a859-470f-8aed-0f684146aeca';
 

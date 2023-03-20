@@ -20,3 +20,7 @@
   "truth_pos_CON_ECEF_ECEF_M1": -1387897.36558835,
   "truth_vel_CON_ECEF_ECEF_MpS3": 0.00414972080992211
 }
+
+
+// Cleanup collection after trigger demo
+// db.rocketData.deleteMany({"meta.device" : "testTrigger"})

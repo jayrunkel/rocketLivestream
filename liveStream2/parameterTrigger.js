@@ -63,9 +63,9 @@ exports = function(changeEvent) {
 }
 */
 
-//  const rocketDataCol = context.services.get("Aerospace").db("launchData").collection("rocketData"); 
   const notesCol = context.services.get("Aerospace").db("launchData").collection("notes"); 
-  
+
+	// This object defines the expected range (min and max) for various rocket data parameter values
   const expectedBounds = {
     DATA_DELTA_ANGLE1: {min: -0.001, max: 0.0005},
     OMPS_Range_M1: {min: 15, max: 1000},
@@ -76,14 +76,19 @@ exports = function(changeEvent) {
   
   console.log("changeEvent: ", JSON.stringify(changeEvent));
   console.log("fullDocument: ", JSON.stringify(fullDocument));
-  
+
+	// Loop over each of the parameters for which we have defined the expected min and max values
   Object.keys(expectedBounds).forEach(key => {
     console.log("key: ", key);
     console.log("expectedBounds[key].min: ", expectedBounds[key].min);
     console.log("expectedBounds[key].max: ", expectedBounds[key].max);
     
     const docValue = fullDocument[key];
+
+		// Check to see if the rocket data document inserted has the metric 
     if ((typeof docValue != 'undefined') && (docValue < expectedBounds[key].min || docValue > expectedBounds[key].max)) {
+
+			// Build the note document to be inserted in the notes collection
       const noteDoc = {
 		    title: 'OUT OF BOUNDS NOTIFICATION [ ' + key + ' ]',
 		    notes: `Parameter ${key} with ${docValue} was out of bounds [${expectedBounds[key].min}, ${expectedBounds[key].max}].`,
@@ -95,12 +100,12 @@ exports = function(changeEvent) {
         timeStamp: new Date(),
         author: {name: "Atlas Triggers"}
       };
-      
+
+			// insert the new note
       notesCol.insertOne(noteDoc);
       console.log("New note: ", JSON.stringify(noteDoc));
 	    
     }
   }); 
-  
-	//  rocketDataCol.insertOne(fullDocument);
+
 };
