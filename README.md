@@ -74,6 +74,8 @@ something like:
 
 # Livestream 1
 
+Watch Livestream 1 on [youtube](https://www.youtube.com/live/RUTsdqehWjo?feature=share).
+
 There are three resources for Livestream 1:
 
 1. simpleQueries.js - Queries used to review the rocket data
@@ -86,6 +88,8 @@ There are three resources for Livestream 1:
    chart manually by following the steps during the live stream.)_
    
 # Livestream 2
+
+Watch Livestream 2 on [youtube](https://www.youtube.com/live/-jSQhlkaBCc?feature=share).
 
 There are 5 resources for Livestream 2:
 
