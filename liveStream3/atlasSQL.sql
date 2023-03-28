@@ -23,7 +23,7 @@ INNER JOIN Weather as w
      h."time" < DATEADD(MINUTE, 1, w.time_tag) AND 
      w.metric = 'plasma-7-day' AND 
      h."time" > CAST('2020-10-13T13:44:18.891Z' AS BSON_DATE) AND
-     h.meta.device = 'lidar'
+     h.meta.device = 'lidar';
 
 
 

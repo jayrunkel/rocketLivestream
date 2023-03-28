@@ -109,7 +109,8 @@ There are 5 resources for Livestream 2:
    * `npm start` (this should open a browser tab with the react app)
    * In Charts, make your data source, dashboard, and chart accessible
      by unauthenticated access.
-   * Assign your baseUri and ChartId in the variables at the top of `<yourPath>/rocketLiveStream/liveStream2/embedChartFinal/src/Dashboard.js`
+   * Assign your baseUri and ChartId in the variables at the top of
+     `<yourPath>/rocketLiveStream/liveStream2/embedChartFinal/src/Dashboard.js` 
 5. parameterTrigger.js - The code for the trigger that will inspect
    the parameter values and insert a node if a parameter is out of
    bounds. 
@@ -133,6 +134,10 @@ There are four resources for Livestream 3:
    in this file perform the same operations as the queries in
    lidarJoinPlasma.js. lidarJoinPlasma.js is in MQL whereas
    atlasSQL.js is in SQL.
+   
+Install the prerequisites listed
+[here](https://www.mongodb.com/docs/atlas/data-federation/query/sql/dbeaver/connect/)
+to connect DBeaver to Atlas SQL. 
 
 ## CODE FOR $50.00 IN ATLAS CREDITS - FREE
 

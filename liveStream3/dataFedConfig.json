@@ -3,16 +3,6 @@
     {
       "collections": [
         {
-          "name": "lastLaunch",
-          "dataSources": [
-            {
-              "collection": "rocketData",
-              "database": "launchData",
-              "storeName": "Demo"
-            }
-          ]
-        },
-        {
           "name": "Weather",
           "dataSources": [
             {
@@ -25,16 +15,7 @@
           "name": "historicalData",
           "dataSources": [
             {
-              "datasetPrefix": "v1$atlas$snapshot$Demo$launchData$ingestQueue",
-              "storeName": "aws-dls-store"
-            }
-          ]
-        },
-        {
-          "name": "historicalDataTS",
-          "dataSources": [
-            {
-              "datasetPrefix": "v1$atlas$snapshot$Demo$launchData$rocketData",
+              "datasetPrefix": "v1$atlas$snapshot$Aerospace$launchData$rocketData",
               "storeName": "aws-dls-store"
             }
           ]
@@ -45,12 +26,6 @@
     }
   ],
   "stores": [
-    {
-      "clusterName": "Demo",
-      "name": "Demo",
-      "projectId": "5cacdd8d553855ee7859f398",
-      "provider": "atlas"
-    },
     {
       "bucket": "rocket-data-archive",
       "delimiter": "/",
@@ -66,3 +41,5 @@
     }
   ]
 }
+
+
