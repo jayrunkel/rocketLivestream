@@ -118,6 +118,8 @@ There are 5 resources for Livestream 2:
 
 # Livestream 3
 
+What Livestream 3 on [youtube](https://www.youtube.com/watch?v=VOxy5VRk4g0).
+
 There are four resources for Livestream 3:
 
 1. dataFedConfig.json - The JSON representation of the Data Federation
